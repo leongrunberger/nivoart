@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VideoController;
+use App\Http\Controllers\SongController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/videos', function () {
-    return 'Hier sind später meine Videos zu sehen';
-});
+Route::get('/videos', [VideoController::class, 'index']);
+
+Route::get('/songs', [SongController::class, 'show']);
+
+
