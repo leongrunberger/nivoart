@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\SongController;
+use App\Http\Controllers\GameController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,12 +16,16 @@ use App\Http\Controllers\SongController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/start', function () {
     return view('welcome');
 });
 
 Route::get('/videos', [VideoController::class, 'index']);
 
 Route::get('/songs', [SongController::class, 'show']);
+
+Route::get('/gamesoverview', [GameController::class, 'index']);
+
+
 
 
