@@ -5,8 +5,9 @@
  
  @section('content')      
  
-
-                            <div class="ml-12">
+ <div class="container-fluid">
+ 
+                            <div class="ml-8">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
                                     DPimmel dient als Spielwiese. Hier möchte ich meinen selbst produzierten Videos uploaden und Geld verdienen. Spaßi. Eigentlich nur im programmieren fit bleiben.
                                 </div>
@@ -27,4 +28,5 @@
 
                                 </div>
                             </div>
+</div>
  @endsection                    

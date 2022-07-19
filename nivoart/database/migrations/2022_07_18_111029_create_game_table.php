@@ -15,20 +15,20 @@ return new class extends Migration
     {
         Schema::create('game', function (Blueprint $table) {
             $table->increments('id');
-            $table->String('Titel');
-            $table->String('1');
-            $table->String('2');
-            $table->String('3');
-            $table->String('4');
-            $table->String('5');
-            $table->String('6');
-            $table->String('7');
-            $table->String('8');
-            $table->String('9');
-            $table->String('10');
-            $table->String('Kategorie');
-            $table->String('Ersteller');
-            $table->String('Quelle');
+            $table->String('titel');
+            $table->String('eins');
+            $table->String('zwei');
+            $table->String('drei');
+            $table->String('vier');
+            $table->String('fuenf');
+            $table->String('sechs');
+            $table->String('sieben');
+            $table->String('acht');
+            $table->String('neun');
+            $table->String('zehn');
+            $table->String('kategorie');
+            $table->String('ersteller');
+            $table->String('quelle');
             $table->timestamps();
         });
     }
