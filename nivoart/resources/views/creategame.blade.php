@@ -3,11 +3,11 @@
 @section('title', 'Spiel erstellen')
 
 @section('content')
-<form methode="POST">
+<form method="POST" action="/gamesoverview" enctype="multipart/form-data">
+@csrf
   <div class="form-group">
-    @csrf
-    <label for="Titel">Titel</label>
-    <input type="text" class="form-control" id="Titel">
+    <label for="titel">Titel</label>
+    <input type="text" class="form-control" id="titel" name="titel">
   </div>
   <div class="form-group">
     <label for="eins">Platz 1</label>
@@ -50,7 +50,7 @@
     <input type="text" class="form-control" id="zehn" name="zehn">
   </div>
   <div class="form-group">
-    <label for="Kategorie">Kategorie</label>
+    <label for="kategorie">Kategorie</label>
     <select class="form-control">
   <option>Kategorie auswählen</option>
   <option value="Tierwelt">Tierwelt</option>

@@ -9,4 +9,7 @@ class Game extends Model
 {
     use HasFactory;
     protected $table = 'game';
+    protected $fillable = [
+        'titel', 'eins', 'zwei', 'drei', 'vier', 'fuenf', 'sechs', 'sieben', 'acht', 'neun', 'zehn', 'kategorie', 'ersteller', 'quelle'
+    ];
 }

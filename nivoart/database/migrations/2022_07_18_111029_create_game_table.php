@@ -26,9 +26,9 @@ return new class extends Migration
             $table->String('acht');
             $table->String('neun');
             $table->String('zehn');
-            $table->String('kategorie');
-            $table->String('ersteller');
-            $table->String('quelle');
+            $table->String('kategorie')->nullable();
+            $table->String('ersteller')->nullable();
+            $table->String('quelle')->nullable();
             $table->timestamps();
         });
     }

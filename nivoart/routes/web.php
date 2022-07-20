@@ -24,10 +24,13 @@ Route::get('/videos', [VideoController::class, 'index']);
 
 Route::get('/songs', [SongController::class, 'show']);
 
-Route::get('/gamesoverview', [GameController::class, 'index']);
-Route::post('/gamesoverview', [GameController::class, 'store']);
-Route::post('/gamesoverview', 'GameController@store');
-Route::get('/spielerstellen', [GameController::class, 'create']);
+Route::get('gamesoverview', [GameController::class, 'index']);
+
+Route::post('gamesoverview', [GameController::class, 'store']);
+
+Route::get('spielerstellen', [GameController::class, 'create']);
+
+
 
 
 
