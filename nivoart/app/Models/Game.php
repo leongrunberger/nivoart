@@ -9,7 +9,8 @@ class Game extends Model
 {
     use HasFactory;
     protected $table = 'game';
+    protected $primaryKey = 'id';
     protected $fillable = [
-        'titel', 'eins', 'zwei', 'drei', 'vier', 'fuenf', 'sechs', 'sieben', 'acht', 'neun', 'zehn', 'kategorie', 'ersteller', 'quelle'
+        'id','titel', 'eins', 'zwei', 'drei', 'vier', 'fuenf', 'sechs', 'sieben', 'acht', 'neun', 'zehn', 'kategorie', 'ersteller', 'quelle'
     ];
 }

@@ -30,6 +30,7 @@ Route::post('gamesoverview', [GameController::class, 'store']);
 
 Route::get('spielerstellen', [GameController::class, 'create']);
 
+Route::resource('games', '\App\Http\Controllers\GameController');
 
 
 

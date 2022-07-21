@@ -11,12 +11,12 @@ class GameController extends Controller
        
         $data = Game::all();
        
-       return view('gamesoverview', compact('data'));
+       return view('top10.gamesoverview', compact('data'));
     }
 
     public function create(){
        
-       return view('creategame');
+       return view('top10.creategame');
     }
 
     public function store(Request $request) {
@@ -50,5 +50,48 @@ class GameController extends Controller
             $game->save();
             return redirect('/gamesoverview')
             ->with('success','Game has been created successfully.');
+    }
+
+    public function show($id)
+    {
+        $game = Game::find($id);
+
+        return view('Top10.show_game', compact('game'));
+    }
+
+    public function edit($id)
+    {
+        $game = Game::findOrFail($id);
+
+        return view('Top10.editgame', compact('game'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $data = $request->validate([
+            'titel' => 'required',
+            'eins' => 'required',
+            'zwei' => 'required',
+            'drei' => 'required',
+            'vier' => 'required',
+            'fuenf' => 'required',
+            'sechs' => 'required',
+            'sieben' => 'required',
+            'acht' => 'required',
+            'neun' => 'required',
+            'zehn' => 'required'
+        ]);
+
+        Game::whereId($id)->update($data);
+
+        return redirect('/gamesoverview')->with('success', 'Spiel erfolgreich bearbeitet');
+    }
+
+    public function destroy($id)
+    {
+        $game = Game::findOrFail($id);
+        $game->delete();
+
+        return redirect('/gamesoverview')->with('success', 'Game gelöscht');
     }
 }
