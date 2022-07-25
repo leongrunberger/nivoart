@@ -7,11 +7,23 @@ use Illuminate\Http\Request;
 
 class GameController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
        
         $data = Game::all();
+
+        $game =Game::where([
+            ['titel', '!=', NULL],
+            [function($query) use ($request){
+                if(($term = $request->term)){
+                 $query->orWhere('titel', 'LIKE', '%' . $term . '%')->get();   
+                }
+            }]
+            
+            
+        ])->orderBy("id", "desc")
+        ->paginate(10);;
        
-       return view('top10.gamesoverview', compact('data'));
+       return view('top10.gamesoverview', compact('data'))->with('i',(request()->input('page', 1) - 1)* 5);
     }
 
     public function create(){
@@ -79,7 +91,8 @@ class GameController extends Controller
             'sieben' => 'required',
             'acht' => 'required',
             'neun' => 'required',
-            'zehn' => 'required'
+            'zehn' => 'required',
+            'kategorie' => 'required'
         ]);
 
         Game::whereId($id)->update($data);

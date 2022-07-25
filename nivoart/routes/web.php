@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\SongController;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,9 @@ Route::post('gamesoverview', [GameController::class, 'store']);
 Route::get('spielerstellen', [GameController::class, 'create']);
 
 Route::resource('games', '\App\Http\Controllers\GameController');
+
+Route::get('/search',[SearchController::class, 'index'])->name('search');
+Route::get('/autocomplete',[SearchController::class, 'autocomplete'])->name('autocomplete');
 
 
 

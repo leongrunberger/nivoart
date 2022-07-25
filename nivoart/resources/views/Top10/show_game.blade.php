@@ -1,7 +1,7 @@
 @extends('layout')
 @section('title', 'Spielansicht')
 @section('content')
-<h1>Ausgewähltes Spiel: {{ $game->titel }}</h1>
+<h1 id="showtitel">Ausgewähltes Spiel: {{ $game->titel }}</h1>
 
 <div class="jumbotron text-center">
     <h2>{{ $game->titel }}</h2>
