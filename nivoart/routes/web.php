@@ -33,8 +33,8 @@ Route::get('spielerstellen', [GameController::class, 'create']);
 
 Route::resource('games', '\App\Http\Controllers\GameController');
 
-Route::get('/search',[SearchController::class, 'index'])->name('search');
-Route::get('/autocomplete',[SearchController::class, 'autocomplete'])->name('autocomplete');
+Route::get('/suchergebnisse',[GameController::class, 'search'])->name('search');
+
 
 
 

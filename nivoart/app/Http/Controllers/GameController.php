@@ -9,9 +9,9 @@ class GameController extends Controller
 {
     public function index(Request $request){
        
-        $data = Game::all();
+       // $data = Game::all();
 
-        $game =Game::where([
+        $data =Game::where([
             ['titel', '!=', NULL],
             [function($query) use ($request){
                 if(($term = $request->term)){
@@ -21,9 +21,9 @@ class GameController extends Controller
             
             
         ])->orderBy("id", "desc")
-        ->paginate(10);;
+        ->paginate(10);
        
-       return view('top10.gamesoverview', compact('data'))->with('i',(request()->input('page', 1) - 1)* 5);
+       return view('top10.gamesoverview', compact('data'))->with('i',(request()->input('page', 1) - 1) * 5);
     }
 
     public function create(){

@@ -19,6 +19,10 @@
             body {
                 font-family: 'Nunito', sans-serif;
             }
+
+        .searchDiv {
+            float: right,
+        }
         </style>
     </head>
     <body>
